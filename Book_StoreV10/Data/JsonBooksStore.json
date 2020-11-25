@@ -1,0 +1,37 @@
+[
+  {
+    "Price": 200.0,
+    "Title": "Programming",
+    "ISBN": "111",
+    "Author": "allan",
+    "ImageName": "Coders.jfif"
+  },
+  {
+    "Price": 123.0,
+    "Title": "C# programming",
+    "ISBN": "222",
+    "Author": "Albert Einstein",
+    "ImageName": "Future_Marketing.jfif"
+  },
+  {
+    "Price": 123.0,
+    "Title": "Football programming",
+    "ISBN": "333",
+    "Author": "Messi",
+    "ImageName": "Python Programming.jfif"
+  },
+  {
+    "Price": 3545.0,
+    "Title": "Økonomi intro",
+    "ISBN": "444",
+    "Author": "Peter Jensen",
+    "ImageName": "Basic Economics.jfif"
+  },
+  {
+    "Price": 766.0,
+    "Title": "C# programming",
+    "ISBN": "345",
+    "Author": "Peter Jensen",
+    "ImageName": "Basic Economics.jfif"
+  }
+]

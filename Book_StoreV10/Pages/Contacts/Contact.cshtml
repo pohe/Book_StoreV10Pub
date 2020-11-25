@@ -1,0 +1,19 @@
+﻿@page
+@model Book_StoreV10.Pages.Contacts.ContactModel
+@{
+}
+
+<h1>@Model.Welcome</h1>
+<p>Please send an email to support@mail.dk for support or complains!</p>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Message.From"></label> <input type="text" asp-for="Message.From" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Message.Subject"></label> <input type="text" asp-for="Message.Subject" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Message.Body"></label> <textarea asp-for="Message.Body" class="form-control" ></textarea>
+    </div>
+        <input type="submit" />
+</form>

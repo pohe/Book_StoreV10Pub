@@ -1,0 +1,13 @@
+X-Sender: company@mail.dk
+X-Receiver: jens@mail.dk
+MIME-Version: 1.0
+From: company@mail.dk
+To: jens@mail.dk
+Date: 25 Nov 2020 09:37:56 +0100
+Subject: Order information
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+<p>10 </BR> Id 56  Name Jens Hansen Email jens@mail.dk   Section =
+Marketing Order info : </BR>  System.Collections.Generic.List`1[B=
+ook_StoreV10.Models.Book] total 200.00

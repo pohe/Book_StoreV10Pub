@@ -1,0 +1,31 @@
+﻿@page
+@using Book_StoreV10.Models
+@model Book_StoreV10.Pages.Orders.CheckOutModel
+@{
+    ViewData["Title"] = "CheckOut";
+}
+
+<h2 style="glyph-orientation-horizontal">Check-Out</h2>
+
+<form method="post">
+    <h3>Please, enter you  information</h3>
+    <div class="form-group">
+        <label>Id:</label><input asp-for="@Model.Student.Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="@Model.Student.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email:</label><input asp-for="@Model.Student.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Section:</label>
+        <select asp-for="Student.Section" asp-items="Html.GetEnumSelectList<Section>()" class="form-control">
+            <option value="">Vælg en section</option>
+        </select>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>
