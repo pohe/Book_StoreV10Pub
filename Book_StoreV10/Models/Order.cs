@@ -11,7 +11,7 @@ namespace Book_StoreV10.Models
     {     
         public int OrderID { get; set; }          
         public Student Student { get; set; }
-        public List<Book> Books { get; set; }
+        public List<OrderLine> orderLines { get; set; }
         public DateTime DateTime { get; set; }
     }
 }

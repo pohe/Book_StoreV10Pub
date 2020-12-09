@@ -41,7 +41,7 @@ namespace Book_StoreV10.Pages.Orders
             Order order = new Order();
             order.OrderID = 12;
             order.Student = Student;
-            order.Books = cart.GetOrderedBooks();
+            order.orderLines = cart.GetOrderedBooks();
             order.DateTime = DateTime.Now;
             repository.AddOrder(order);
             sendEmail(order);

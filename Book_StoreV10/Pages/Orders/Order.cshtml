@@ -8,13 +8,21 @@
 <h5> Your order contains:</h5>
 @foreach (var item in Model.cartItems)
 {
-    <tr>
-        <td class="text-left"> Name: @item.Title</td>
-        <td class="text-right">
-            Total Price :
-            @((item.Price).ToString("c"))
-        </td>
-    </tr>
+<tr>
+    <td class="text-left"> Name: @item.Book.Title</td>
+    <td class="text-right">
+        Price :
+        @((item.Book.Price).ToString("c"))
+    </td>
+    <td class="text-right">
+        Amount :
+        @((item.Amount))
+    </td>
+    <td class="text-right">
+        Price :
+        @((item.Book.Price* (item.Amount)).ToString("c"))
+    </td>
+</tr>
     <br />
 }
 

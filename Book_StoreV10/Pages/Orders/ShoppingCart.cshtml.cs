@@ -13,7 +13,7 @@ namespace Book_StoreV10.Pages.Orders
     public class ShoppingCartModel : PageModel
     {
         public ShoppingCartService ChartService { get; }
-        public List<Book> OrderedBooks { get; set; }
+        public List<OrderLine> OrderedBooks { get; set; }
         private IBooksRepository repo;
 
         public Book Book { get; set; }
@@ -22,7 +22,7 @@ namespace Book_StoreV10.Pages.Orders
         {
             repo = repository;
             ChartService = chart;
-            OrderedBooks = new List<Book>();
+            OrderedBooks = new List<OrderLine>();
         }
         public IActionResult OnGet(string isbn)
         {

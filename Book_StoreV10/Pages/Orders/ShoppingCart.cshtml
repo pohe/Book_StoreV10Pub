@@ -6,12 +6,13 @@
 <h1>ShoppingCart</h1>
 <table class="table table-bordered table-striped">
     <thead>
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Image</th>
-        <th class="text-right">Price</th>
-    </tr>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Image</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Amount</th>
+        </tr>
     </thead>
     @if (Model.OrderedBooks.Count != 0)
     {
@@ -19,19 +20,20 @@
         @foreach (var item in Model.OrderedBooks)
         {
             <tr>
-                <td class="text-center">@item.Title</td>
-                <td class="text-left">@item.Author</td>
+                <td class="text-center">@item.Book.Title</td>
+                <td class="text-left">@item.Book.Author</td>
                 <td>
-                    <img src="~/Books/@item.ImageName" width="60" height="70">
+                    <img src="~/Books/@item.Book.ImageName" width="60" height="70">
                 </td>
-                <td class="text-right">@item.Price.ToString("c")</td>
+                <td class="text-right">@item.Book.Price.ToString("c")</td>
+                <td class="text-right">@item.Amount</td>
                 <td>
                     <form method="post">
-                        <button asp-page-handler="Delete" asp-route-isbn="@item.ISBN"
+                        <button asp-page-handler="Delete" asp-route-isbn="@item.Book.ISBN"
                                 class="btn btn-danger btn-group-lg pull-right">
                             Delete-From-Chart
                         </button>
-                        <button asp-page-handler="Update" asp-route-isbn="@item.ISBN"
+                        <button asp-page-handler="Update" asp-route-isbn="@item.Book.ISBN"
                                 class="btn btn-danger btn-group-lg pull-right">
                             Update-Chart
                         </button>

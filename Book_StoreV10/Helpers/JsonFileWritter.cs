@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Book_StoreV10.Models;
+using Newtonsoft.Json;
 
 namespace Book_StoreV10
 {
@@ -12,13 +13,13 @@ namespace Book_StoreV10
     {
         public static void WriteToJsonBook(List<Book> books, string JsonFileName)
         {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(books, Newtonsoft.Json.Formatting.Indented);
+            string output = JsonConvert.SerializeObject(books, Formatting.Indented);
             File.WriteAllText(JsonFileName, output);
         }
 
         internal static void WriteToJsonOrder(List<Order> orders, string filePath)
         {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(orders, Newtonsoft.Json.Formatting.Indented);
+            string output = JsonConvert.SerializeObject(orders, Formatting.Indented);
             File.WriteAllText(filePath, output);
         }
     }

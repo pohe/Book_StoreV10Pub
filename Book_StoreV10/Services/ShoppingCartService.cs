@@ -10,28 +10,61 @@ namespace Book_StoreV10.Services
     {
         // This service should be implemented 
 
-        List<Book> _cartItems;
+        List<OrderLine> _cartItems;
         public ShoppingCartService()
         {
-            _cartItems = new List<Book>();
+            _cartItems = new List<OrderLine>();
         }
         public void Add(Book book)
         {
-            _cartItems.Add(book);
+            OrderLine  oLine = findOrderline(book.ISBN);
+            if (oLine == null)
+            {
+                OrderLine oline = new OrderLine(book, 1);
+                _cartItems.Add(oline);
+            }
+            else
+            {
+                updateOrderline(book.ISBN);
+            }
+            
         }
 
-        public List<Book> GetOrderedBooks()
+        private void updateOrderline(string isbn)
+        {
+            foreach (OrderLine orderLine in _cartItems)
+            {
+                if (orderLine.Book.ISBN == isbn)
+                    orderLine.Amount++;
+            }
+        }
+
+        private OrderLine findOrderline(string isbn)
+        {
+            foreach (OrderLine orderLine in _cartItems)
+            {
+                if (orderLine.Book.ISBN == isbn)
+                    return orderLine;
+            }
+            return null; 
+        }
+
+        public List<OrderLine> GetOrderedBooks()
         {
             return _cartItems;
         }
 
         public void RemoveBook(string isbn)
         {
-            foreach (var book in _cartItems)
+            foreach (OrderLine line in _cartItems)
             {
-                if (book.ISBN == isbn)
+                if (line.Book.ISBN == isbn)
                 {
-                    _cartItems.Remove(book);
+                    if (line.Amount <= 1)
+                        _cartItems.Remove(line);
+                    if (line.Amount > 1)
+                        line.Amount = line.Amount - 1;
+                    
                     break;
                 }
             }
@@ -43,7 +76,7 @@ namespace Book_StoreV10.Services
 
             foreach (var v in _cartItems)
             {
-                totalPrice = totalPrice + (decimal)v.Price;
+                totalPrice = totalPrice + (decimal)v.Book.Price* v.Amount;
             }
             return totalPrice;
         }

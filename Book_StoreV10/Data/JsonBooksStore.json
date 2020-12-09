@@ -33,5 +33,12 @@
     "ISBN": "345",
     "Author": "Peter Jensen",
     "ImageName": "Basic Economics.jfif"
+  },
+  {
+    "Price": 999.0,
+    "Title": "Israas JSON guide",
+    "ISBN": "999",
+    "Author": "Israa",
+    "ImageName": "Basic Economics.jfif"
   }
 ]

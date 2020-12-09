@@ -21,8 +21,8 @@ namespace Book_StoreV10.Pages.Orders
 
         public string SalesInfo { get; set; }
         public Student Student { get; set; }
-        public Order Order { get; set; }
-        public List<Book> cartItems { get; set; }
+        //public Order Order { get; set; }
+        public List<OrderLine> cartItems { get; set; }
 
         public OrderModel(JsonOrderRepository repoService, ShoppingCartService cartService)
         {
